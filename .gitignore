@@ -1,6 +1,7 @@
 venv/*
 
 # Byte-compiled / optimized / DLL files
+*/__pycache/*
 __pycache__/
 *.py[cod]
 
