@@ -3,13 +3,13 @@ from main.main_view import MainView
 
 class App(QMainWindow):
 
-	__instance = None
+	_instance = None
 
 	@staticmethod
 	def get_instance():
-		if App.__instance == None:
-			App.__instance = App()
-		return App.__instance
+		if App._instance == None:
+			App._instance = App()
+		return App._instance
 
 	
 	def __init__(self):
