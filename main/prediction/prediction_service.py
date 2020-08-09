@@ -27,3 +27,10 @@ class PredictionService:
 	def column_text_changed(self, text):
 		TrainRequest.get_instance().pred_column = text
 
+
+	def pred_changed(self, pred):
+		TrainRequest.get_instance().pred_type = pred
+
+
+	def algo_changed(self, algo):
+		TrainRequest.get_instance().algo = algo

@@ -20,6 +20,10 @@ class PredictionView:
 
 		selected_pred_type = str(self.pred_type_combo.currentText())
 		self.algo_combo.addItems(self.prediction_service.get_algos(selected_pred_type))
+		self.algo_combo.currentIndexChanged.connect(self.algo_combo_changed)
+
+		selected_algo = str(self.algo_combo.currentText())
+		self.prediction_service.algo_changed(selected_algo)
 
 		layout = qtw.QHBoxLayout()
 		layout.addWidget(label)
@@ -33,16 +37,25 @@ class PredictionView:
 		self.pred_type_combo.addItems(self.prediction_service.get_pred_types())
 		self.pred_type_combo.currentIndexChanged.connect(self.pred_combo_change)
 
+		selected_pred_type = str(self.pred_type_combo.currentText())
+		self.prediction_service.pred_changed(selected_pred_type)
+
 		layout = qtw.QHBoxLayout()
 		layout.addWidget(label)
 		layout.addWidget(self.pred_type_combo)
 		return layout
 
 
-	def pred_combo_change(self, index):
+	def pred_combo_change(self, _):
 		selected_pred_type = str(self.pred_type_combo.currentText())
 		self.algo_combo.clear()
 		self.algo_combo.addItems(self.prediction_service.get_algos(selected_pred_type))
+		self.prediction_service.pred_changed(selected_pred_type)
+
+
+	def algo_combo_changed(self, _):
+		selected_algo = str(self.algo_combo.currentText())
+		self.prediction_service.algo_changed(selected_algo)
 
 
 	def create_pred_column_view(self):
