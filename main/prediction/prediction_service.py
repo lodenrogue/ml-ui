@@ -1,6 +1,5 @@
 import json
 
-
 class PredictionService:
 	__algorithms = None
 
