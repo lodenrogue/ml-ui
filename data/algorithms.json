@@ -1,0 +1,19 @@
+{
+	"Regression": [
+		"Lasso",
+		"ElasticNet",
+		"Ridge",
+		"BaggingRegressor",
+		"RandomForestRegressor",
+		"ExtraTreesRegressor",
+		"AdaBoostRegressor",
+		"GradientBoostingRegressor"
+	],
+	"Classification": [
+		"BaggingClassifier",
+		"RandomForestClassifier",
+		"ExtraTreesClassifier",
+		"AdaBoostClassifier",
+		"GradientBoostingClassifier"
+	]
+}
