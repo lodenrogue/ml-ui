@@ -48,8 +48,14 @@ class PredictionView:
 	def create_pred_column_view(self):
 		label = qtw.QLabel('Column to predict:')
 		self.column_input_box = qtw.QLineEdit()
+		self.column_input_box.textChanged.connect(self.text_changed)
 
 		layout = qtw.QHBoxLayout()
 		layout.addWidget(label)
 		layout.addWidget(self.column_input_box)
 		return layout
+
+
+	def text_changed(self):
+		new_text = self.column_input_box.text()
+		self.prediction_service.column_text_changed(new_text)

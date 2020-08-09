@@ -1,4 +1,5 @@
 import json
+from model.train_request import TrainRequest
 
 class PredictionService:
 	__algorithms = None
@@ -21,3 +22,8 @@ class PredictionService:
 
 	def get_algos(self, selected_pred_type):
 		return PredictionService.__algorithms[selected_pred_type]
+
+
+	def column_text_changed(self, text):
+		TrainRequest.get_instance().pred_column = text
+
