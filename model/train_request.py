@@ -9,6 +9,7 @@ class TrainRequest:
 			TrainRequest._instance = TrainRequest()
 		return TrainRequest._instance
 
+
 	def __init__(self):
 		self._csv_path = None
 		self._pred_type = None
