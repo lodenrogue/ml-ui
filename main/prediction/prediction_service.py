@@ -24,10 +24,6 @@ class PredictionService:
 		return PredictionService.__algorithms[selected_pred_type]
 
 
-	def column_text_changed(self, text):
-		TrainRequest.get_instance().pred_column = text
-
-
 	def pred_changed(self, pred):
 		TrainRequest.get_instance().pred_type = pred
 

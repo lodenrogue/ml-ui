@@ -7,7 +7,8 @@ class RunService:
 		self.ml_service = MLService();
 
 
-	def run(self):
+	def run(self, callback):
 		req = TrainRequest.get_instance()
-		self.ml_service.train(req)
+		accuracy = self.ml_service.train(req)
+		callback(accuracy)
 		

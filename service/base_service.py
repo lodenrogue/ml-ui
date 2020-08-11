@@ -18,9 +18,8 @@ class BaseService:
 
 		model = self.get_models()[algorithm]()
 		model.fit(X_train, y_train)
-
-		accuracy = model.score(X_test, y_test)
-		print('Accuracy: {}'.format(accuracy))
+		
+		return model.score(X_test, y_test)
 
 
 	def get_models(self):

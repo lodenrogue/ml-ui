@@ -12,10 +12,10 @@ class MLService:
 		pred_type = train_request.pred_type
 
 		if pred_type == 'Regression':
-			self.regression_service.train(train_request)
+			return self.regression_service.train(train_request)
 
 		elif pred_type == 'Classification':
-			self.classificaton_service.train(train_request)
+			return self.classificaton_service.train(train_request)
 
 		else:
-			print('Unknown prediction type {}'.format(pred_type))
+			return 'Unknown prediction type {}'.format(pred_type)
