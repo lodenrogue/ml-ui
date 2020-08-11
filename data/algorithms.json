@@ -3,6 +3,7 @@
 		"Lasso",
 		"ElasticNet",
 		"Ridge",
+		"MLPRegressor",
 		"BaggingRegressor",
 		"RandomForestRegressor",
 		"ExtraTreesRegressor",
@@ -13,6 +14,10 @@
 		"SVC",
 		"LinearSVC",
 		"SGDClassifier",
-		"BaggingClassifier"
+		"BaggingClassifier",
+		"RandomForestClassifier",
+		"ExtraTreesClassifier",
+		"AdaBoostClassifier",
+		"GradientBoostingClassifier"
 	]
 }
