@@ -10,10 +10,9 @@
 		"GradientBoostingRegressor"
 	],
 	"Classification": [
-		"BaggingClassifier",
-		"RandomForestClassifier",
-		"ExtraTreesClassifier",
-		"AdaBoostClassifier",
-		"GradientBoostingClassifier"
+		"SVC",
+		"LinearSVC",
+		"SGDClassifier",
+		"BaggingClassifier"
 	]
 }
