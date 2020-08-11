@@ -11,7 +11,7 @@ class RunView:
 	def create_view(self):
 		button = qtw.QPushButton('Run')
 		button.clicked.connect(lambda: self.run_service.run(self.run_callback))
-		self.results = qtw.QLabel('Accuracy:')
+		self.results = qtw.QLabel('Result:')
 
 		layout = qtw.QVBoxLayout()
 		layout.addWidget(button)
@@ -20,5 +20,5 @@ class RunView:
 		return layout
 
 
-	def run_callback(self, accuracy):
-		self.results.setText('Accuracy: {}'.format(accuracy))
+	def run_callback(self, result):
+		self.results.setText(result)
