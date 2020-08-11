@@ -1,8 +1,8 @@
 import PyQt5.QtWidgets as qtw
-from main.csv.data_service import DataService
+from main.data.data_service import DataService
 
 
-class CsvView():
+class DataView():
 
 	def __init__(self):
 		self.data_service = DataService()
