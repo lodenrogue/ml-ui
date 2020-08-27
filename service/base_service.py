@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MinMaxScaler
 
 class BaseService:
 
@@ -15,6 +16,10 @@ class BaseService:
 		y = np.array(df[prediction_label])
 
 		X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size)
+
+		scaler = MinMaxScaler().fit(X)
+		X_train = scaler.transform(X_train)
+		X_test = scaler.transform(X_test)
 
 		model = self.get_models()[algorithm]()
 		model.fit(X_train, y_train)
